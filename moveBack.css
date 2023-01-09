@@ -1,0 +1,9 @@
+@keyframes moveBack{
+	0%{margin-right: 65px;}
+	100%{margin-right: 0px;}
+}
+#initialButton{
+	animation-name: moveBack;
+	animation-duration: 0.7s;
+	margin-right: 0px;
+}

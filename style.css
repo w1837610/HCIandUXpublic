@@ -1,0 +1,81 @@
+.header{
+	padding: 0.5em;
+	padding-left: 2em;
+	background: #000;
+	font-weight: bolder;
+	color: #fff;
+	margin-bottom: 0;
+	position: sticky;
+	top: 0px;
+}
+.header h3{
+	display: inline-block;
+	margin-right: 1em;
+}
+.jumbotron{
+	margin-top: 0;
+	padding-left: 20vw;
+	padding-right: 20vw;
+}
+#logo{
+	border-color: #fff;
+	border-style: solid;
+	max-width: 3em;
+	text-align: center;
+	padding: 0.2em;
+}
+
+.invalidField{
+	border-color: darkred;
+	border-width: 2px;
+}
+
+#slideForms{
+	max-width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.dropDownMenu{
+	position: relative;
+	display: inline-block;
+}
+.dropDownContent{
+	display: none;
+	position: absolute;
+	z-index: 1;
+}
+.dropDownMenu:hover .dropDownContent{
+	display: block;
+	min-width: 300px;
+	padding: 1em;
+	overflow: scroll;
+	max-height: 60vh;
+	background-color: #fff;
+	color: #000;
+	text-align: center;
+}
+
+.dropDownContent button{
+	width: 80%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

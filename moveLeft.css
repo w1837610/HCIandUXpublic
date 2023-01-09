@@ -1,0 +1,10 @@
+@keyframes moveLeft{
+	0%{margin-right: 0px;}
+	100%{margin-right: 65px;}
+}
+
+#initialButton{
+	animation-name: moveLeft;
+	animation-duration: 0.7s;
+	margin-right: 65px;
+}

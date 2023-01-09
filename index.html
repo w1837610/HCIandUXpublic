@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Bootstrap 3 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="" id="plugNightMode">
+	<title>Mortgage Calculator</title>
+</head>
+
+<div id="fontSizeVar">
+<header class="header">
+	<h3 id="logo">PMC</h3>
+	<div class="dropDownMenu">
+		
+		<button class="dropDownBtn btn btn-default">Accessibility</button>
+		<div class="dropDownContent">
+			<h3 style="display: inline-block;">Font Size</h3>
+			<select style="display: inline-block; max-width: 13em;" class="form-control" id="fontSelect">
+			</select><button class="btn btn-default" onclick="changeFontSize();">Apply font size</button>
+				<script type="text/javascript">
+					for (var i=10; i<71; i+=2){
+						document.getElementById('fontSelect').innerHTML+="<option value='"+i+"'>"+i+"px</option>";
+					}
+				</script>
+
+				<br><button class="btn btn-default" onclick="nightDay();" id="nightDayBtn">Enable Night Mode</button>
+		</div>
+	</div>
+</header>
+<body>
+	<section class="jumbotron text-center">
+
+		<h2>Mortgage Calculator</h2>
+		
+		<p id="cheekyQuote">This minimalist mortgage calculator is designed for one purpose and one purpose only - to give you an initial insight into your next big financial decision</p>
+
+			<div id="hide1">
+				<p>This calculator will give you a <b>ballpark figure</b> to show what you would pay per month on:
+					<ul class="text-left">
+						<li>your mortgage if the interest rates were to rise</li>
+						<li>new mortgages</li>
+						<li>interest only</li>
+					</ul>
+
+					<button class="btn btn-primary" onclick="showForm();">Get started</button>
+				</p>
+			</div>
+
+			<div id="initialForm" class="text-left" style="display: none;">
+
+				<h3>Estimate your monthly instalments</h3>
+				<label for="propertyPrice">Price of the property</label>
+				<input class="form-control"type="number" name="propertyPrice" id="propertyPrice" placeholder="total gross price (with tax) of the property">
+				<label for="deposit">Deposit</label>
+				<input class="form-control"type="number" name="deposit" id="deposit" placeholder="Deposit/Down Payment - money you will pay initially out of your own savings for the property "><br>
+				<div class="text-right">
+					<link rel="stylesheet" type="text/css" href="" id="animationPlugIn">
+					<button id="initialButton" class="btn-default btn" onclick="validateInitialButton(true);" onmouseenter="validateInitialButton();" on>Next</button>
+				</div>
+			</div>
+
+			<div id="results" style="display: none;">
+				<div id="mainResultsContainer" class="row">
+					<div id="resultSet" class="col-md-6" >
+						<h3 id="monthlyPaymentResult">£0.00</h3>
+						<p>a month</p>
+					</div>
+
+					<div id="warningBox" class="col-md-6">
+						<p>if your interest rate goes up by <b>3%</b> your monthly payment would be</p>
+						<h3 id="warningRate">£0.00</h3>
+					</div>
+				</div>
+
+				<div id="slideForms">
+					<label for="alterPropertyPrice">Price of the property</label>
+					<input type="number" class="form-control" name="alterPropertyPrice" id="alterPropertyPrice" placeholder="price of your property">
+					<input type="range" class="form-control" name="alterPropertyPriceSlider" id="alterPropertyPriceSlider" onmousemove="propertyPriceUpdate();"><br>
+
+					<label for="alterDeposit">Deposit</label>
+					<input type="number" class="form-control" name="alterDeposit" id="alterDeposit" placeholder="Deposit/your downpayment">
+					<input type="range" class="form-control" name="alterDepositSlider" id="alterDepositSlider" onmousemove="depositUpdate();"><br>
+
+					<label for="alterYear">Years</label>
+					<input type="number" class="form-control" name="alterYear" id="alterYear" placeholder="amount od years (usually it is 25)">
+					<input type="range" class="form-control" name="alterYearSlider" id="alterYearSlider" onmousemove="yearsUpdate();"><br>
+
+					<label for="alterInterest">Interest rate</label>
+					<input type="number" class="form-control" name="alterInterest" id="alterInterest" placeholder="interest rate (beware that those tend to fluctuate">
+					<input type="range" class="form-control" name="alterInterestSlider" id="alterInterestSlider" onmousemove="interestUpdate();"><br>
+
+				</div>
+			</div>
+	</section>
+</body></div>
+</html>
